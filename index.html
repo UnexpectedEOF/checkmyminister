@@ -1,0 +1,243 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Check My Ministers</title>
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/opensarkar.min.css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile.structure-1.1.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+       More info: h5bp.com/i/378 -->
+    <style>
+     	@font-face { 
+	     	font-family: Samarkan; 
+	     	/*src: url('http://www.mediafont.com/storage/contents/7025/font.eot'); IE */ 
+	     	src: local('Samarkan'), url('./fonts/samarkan_normal.ttf'); /* non-IE */ 
+     	}
+     	.full_name{
+     		font-size: 2.0em;
+     		font-weight: bold;
+     	}
+     	.occupation{
+     		font-size: 1.6em;
+     	}
+     	#mugshot_data{
+     		margin-right: 5px; 
+     	}
+     	#official_karma{
+     		font-size: 1.6em;
+     		font-weight: bold;
+     	}
+     	#main_header{
+     		font-size: 2.8em;
+     		margin-bottom: 0px;
+     	}
+    </style>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="">
+  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+
+  <!-- All JavaScript at the bottom, except this Modernizr build.
+       Modernizr enables HTML5 elements & feature detects for optimal performance.
+       Create your own custom Modernizr build: www.modernizr.com/download/ -->
+  <script src="js/libs/modernizr-2.5.3.min.js"></script>
+</head>
+<body>
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+  <header>
+
+  </header>
+  <div data-role="page" id="pick_district">
+
+	<div data-role="header">
+		<h1>Check My Minister</h1>
+	</div><!-- /header -->
+
+	<div data-role="content" data-theme="a" style="background: url('./img/color_splash.jpg') no-repeat;">
+		<h1 style="font-family: Samarkan, sans-serif;" align="center" id="main_header"><b>Check My Minister</b></h1>
+		<h3 align="center">Powered by</h3>
+		<img src="./img/opensarkar.jpg" style="margin: 5px 44%;" width="90px"/>
+		<h3 align="center">OpenSarkar</h3>
+		<select name="instates" class="input_text_bos" id="state_selector">
+          <option value="selected" selected="">Select Your State </option>
+          <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+          <option value="Andhra Pradesh">Andhra Pradesh</option>
+          <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+          <option value="Assam">Assam </option>
+          <option value="Bihar">Bihar </option>
+          <option value="Chandigarh">Chandigarh </option>
+          <option value="Chhatisgarh">Chhatisgarh</option>
+          <option value="Dadra and Nagar Haveli">Dadra and Nagar Haveli </option>
+          <option value="Daman and Diu">Daman and Diu</option>
+          <option value="Delhi">Delhi</option>
+          <option value="Goa">Goa </option>
+          <option value="Gujarat">Gujarat </option>
+          <option value="Haryana">Haryana </option>
+          <option value="Himachal Pradesh">Himachal Pradesh</option>
+          <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+          <option value="Jharkhand">Jharkhand</option>
+          <option value="Karnataka">Karnataka </option>
+          <option value="Kerala">Kerala </option>
+          <option value="Lakshadweep">Lakshadweep</option>
+          <option value="Madhya Pradesh">Madhya Pradesh</option>
+          <option value="Maharashtra">Maharashtra</option>
+          <option value="Manipur">Manipur </option>
+          <option value="Meghalaya">Meghalaya </option>
+          <option value="Mizoram">Mizoram </option>
+          <option value="Nagaland">Nagaland </option>
+          <option value="Orissa">Orissa </option>
+          <option value="Pondicherry">Pondicherry</option>
+          <option value="Punjab">Punjab </option>
+          <option value="Rajasthan">Rajasthan </option>
+          <option value="Sikkim">Sikkim </option>
+          <option value="Tamil Nadu">Tamil Nadu </option>
+          <option value="Tripura">Tripura </option>
+          <option value="Uttaranchal">Uttaranchal</option>
+          <option value="Uttar Pradesh">Uttar Pradesh</option>
+          <option value="West Bengal">West Bengal</option>
+        </select>
+        
+        <div id="district_selector_div">
+	        <select name="instates" id="district_selector" class="input_text_bos">
+	        	<option value="Central Delhi">Select Your District</option>
+			    <option value="Central Delhi">Central Delhi</option>	
+				<option value="Central Delhi">North Delhi</option>	
+				<option value="Central Delhi">South Delhi</option>
+				<option value="Central Delhi">East Delhi</option>
+				<option value="Central Delhi">North East Delhi</option>
+				<option value="Central Delhi">South West Delhi</option>
+				<option value="Central Delhi">New Delhi</option>
+				<option value="Central Delhi">North West Delhi</option>
+				<option value="Central Delhi">West Delhi</option>
+			</select>
+		</div>	
+	  <a href="#ministers_list" data-role="button" data-icon="star" id="ministers_list_button">Start Making a Change!</a>		
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+<div data-role="page" id="ministers_list" data-add-back-btn="true">
+	<div data-role="header">
+		<h1>Officials in Your District</h1>
+	</div><!-- /header -->
+	<div data-role="content" data-theme="a" style="background: url('./img/color_splash.jpg') no-repeat;">
+		<ul data-role="listview" data-inset="true" data-filter="true" class="ui-listview" role="listbox" id="list_of_ministers">
+			<!--li data-role="list-divider" role="heading" tabindex="0" class="ui-li ui-li-divider ui-btn ui-bar-b ui-btn-up-c" style='font-size:8pt;font-weight:normal'>
+          Test wrote on someone's wall
+          <span class="ui-li-count ui-btn-up-c ui-btn-corner-all" data-icon="check" style='right:55px; padding:3px;padding-left:20px'>34</span>
+          <span class="ui-li-count ui-btn-up-c ui-btn-corner-all" data-icon="delete" style='right:5px; padding:3px;padding-left:20px'>442</span>
+        </li-->
+			<li class="minister" id="AjayMaken"><a href="#minister_view"><img src="http://www.homebreux.com/opensarkar/avatars/user_uploaded/2_original.jpg" width="100"/>Ajay Maken</a></li>
+			<li class="minister" id="JaiPrakashAgarwal"><a href="#minister_view"><img src="http://www.homebreux.com/opensarkar/avatars/user_uploaded/6_original.jpg" width="100"/>Jai Prakash Agarwal</a></li>
+			<li class="minister" id="SandeepDikshit"><a href="#minister_view"><img src="http://www.homebreux.com/opensarkar/avatars/user_uploaded/7_original.jpg" width="100"/>Sandeep Dikshit</a></li>
+			<li class="minister" id="RameshKumar"><a href="#minister_view"><img src="http://www.homebreux.com/opensarkar/avatars/user_uploaded/8_original.jpg" width="100"/>Ramesh Kumar</a></li>
+			<li class="minister" id="MahabalMishra"><a href="#minister_view"><img src="http://www.homebreux.com/opensarkar/avatars/user_uploaded/9_original.jpg" width="100"/>Mahabal Mishra</a></li>
+			<li class="minister" id="KapilSibal"><a href="#minister_view"><img src="http://www.homebreux.com/opensarkar/avatars/user_uploaded/10_original.jpg" width="100"/>Kapil Sibal</a></li>
+			<li class="minister" id="KrishnaTirath"><a href="#minister_view"><img src="http://www.homebreux.com/opensarkar/avatars/user_uploaded/11_original.jpg" width="100"/>Krishna Tirath</a></li>
+		</ul>
+	</div>
+</div>
+
+<div data-role="page" id="minister_view" data-add-back-btn="true">
+	<div data-role="header">
+		<h1 id="minister_header_title">Minister View</h1>
+	</div><!-- /header -->
+	<div data-role="content" data-theme="a" style="background: url('./img/color_splash.jpg') no-repeat;">
+		
+		<div id="mugshot_data" style="font-size: 2.0 em; display: inline; float: left">
+			<span id="official_photo"><img height="300px"/></span>
+		</div>
+		<div id="profile_data">
+			<span id="official_name" class="full_name"></span><br />
+			<span id="official_occupation" class="occupation"></span><br />
+			Karma: <span id="official_karma"></span><br />
+			Email: <span id="official_email"></span><br />
+			Location: <span id="official_location"></span><br />
+			Phone: <span id="official_phone"></span><br />
+			OpenSakar Profile: <a id="official_profile" target="blank"></a><br />
+		</div>
+		
+	</div>
+</div>
+
+
+  <footer>
+
+  </footer>
+
+
+  <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.7.1.min.js"><\/script>')</script>
+  <script>
+  	currentMinisterId = "";
+    $("#district_selector_div").addClass("hidden");
+    $("#ministers_list_button").addClass("hidden");
+    stateSelected = false;
+    districtSelected = false;
+  	$("#state_selector").change(function(){
+  		if(!stateSelected){
+  			$("#district_selector_div").toggleClass("hidden");
+  			//$("#ministers_list_button").toggleClass("hidden");
+  			selected = true;
+  		}
+  	});
+  	$("#district_selector").change(function(){
+  		if(!districtSelected){
+  			$("#ministers_list_button").toggleClass("hidden");
+  			districtSelected = true;
+  		}
+  	});
+  	$("#list_of_ministers").on("click", "li", 
+  				function(event){
+  					currentMinisterId = $(this).attr("id");
+  					
+  					$.ajax({url: "http://www.homebreux.com/opensarkar/user.php?login="+currentMinisterId+"&output=json",
+  							success: function(data, textStatus, jqXHR){
+  								$("#official_location").html(data.location);
+  								$("#official_photo img").attr('src', 'http://www.homebreux.com/opensarkar/avatars/user_uploaded/'+data.id+'_original.jpg');
+  								$("#official_phone").html(data.skype);
+  								$("#official_name").html(data.names);
+  								$("#minister_header_title").html(data.names);
+  								$("#official_karma").html(data.karma);
+  								
+  								var karmaNumber = parseInt(data.karma);
+  								var textColor = "black";
+  								if(karmaNumber < 0.0){
+  									textColor = "red";
+  								} else if(karmaNumber > 50.00){
+  									textColor = "green";
+  								}
+  								$("#official_karma").css("color", textColor);
+  								$("#official_occupation").html(data.occupation);
+  								$("#official_email").html(data.public_email);
+  								$("#official_profile").attr("href", "http://homebreux.com/opensarkar/user.php?login="+data.username);
+  								$("#official_profile").html("@"+data.username);
+  							}
+  					});
+  				});
+  </script>
+  <!-- end scripts -->
+
+  <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+       mathiasbynens.be/notes/async-analytics-snippet -->
+  <script>
+    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+</body>
+</html>
